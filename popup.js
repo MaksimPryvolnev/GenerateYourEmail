@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     generateEmail = document.getElementById('gen');
     // var container = document.getElementById('container');
     getChanges();
+    myFunction();
 });
 
 function changeEmail(prefix, sufix, domain, output) {
@@ -48,6 +49,19 @@ window.onload = function () {
     copy.addEventListener('click', () => {
         copyEmail(output);
     });
+
+
+    document.addEventListener('keydown', (e) => {
+        if(e.ctrlKey && e.keyCode == 67) {
+            changeEmail(prefix.value, sufix.value, domain.value, output);
+
+        if(prefix.value && sufix.value && domain.value){
+            saveChanges(prefix.value, sufix.value, domain.value, output.value);
+        }
+            copyEmail(output);
+            getChanges();
+        }
+    });
     copyLastEmail.addEventListener('click', () => {
         copyEmail(outputLast);
     });
@@ -59,3 +73,5 @@ window.onload = function () {
         }
     });
 }
+
+
