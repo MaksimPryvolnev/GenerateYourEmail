@@ -1,0 +1,97 @@
+      body {
+        width: 780px;
+        margin: 10px;
+        height: 150px;
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      #container {
+        margin-bottom: 62px;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      .lbl {
+        border: 1px solid #ff3000;
+        border-radius: 8px 0px 0px 8px;
+        padding: 7px 10px;
+        background-color: bisque;
+        cursor: pointer;
+      }
+
+      input {
+        margin: 0px 0px 0px -4px;
+        padding: 2px 0px 0px 25px;
+        border: 1px solid #ff3000;
+        border-left: 0;
+        height: 28px;
+        border-radius: 0px 8px 8px 0px;
+      }
+
+      #domain {
+        margin: 0px 0px 0px -4px;
+      }
+
+      #lblLast {
+        left: 3%;
+        position: absolute;
+      }
+
+      #copyLastEmail {
+        margin: 0;
+        top: 65%;
+        right: 3%;
+        padding: 0 72px;
+      }
+
+      .inputCont {
+        display: inline-block;
+      }
+
+      .emailCont input {
+        width: 402px;
+        border: 1px solid #ff3000;
+        margin: 0 0 0 15px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .emailCont button {
+        text-align: right;
+        position: absolute;
+        top: 40%;
+        right: 17%;
+        height: 30px;
+        border: 2px solid rgb(150, 201, 129);
+        border-radius: 8px;
+        background-color: #dff0d8;
+      }
+
+      #copy {
+        right: 3%;
+        border-radius: 0 8px 8px 0;
+        padding: 0 40px;
+      }
+
+      #gen {
+        border-radius: 8px 0 0 8px;
+        padding: 0 34px;
+      }
+
+      .emailCont {
+        margin-top: 35px;
+        text-align: initial;
+      }
+
+      #output {
+        width: 473px;
+      }
+
+      #outputLast {
+        border-radius: 0 8px 8px 0;
+        border-left: 0;
+        margin: 0 0 0 88px;
+      }

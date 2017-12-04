@@ -7,78 +7,8 @@
 <html>
   <head>
     <title>Generate your email.</title>
-    <style type="text/css">
-      body {
-        width: 780px;
-        margin: 10px;
-        height: 150px;
-        white-space: nowrap;
-      }
-
-      h1 {
-        padding: 0 0 0 36%;
-        font-size: 15px;
-      }
-
-      #copy {
-        position: relative;
-        right: 25px;
-        top: 50px;
-        margin-bottom: 15px;
-      }
-
-      #gen {
-        position: relative;
-        right: 4px;
-        top: 50px;
-        margin-bottom: 15px;
-      }
-
-      #output {
-        position: absolute;
-        right: 23%;
-        top: 51%;
-        border: 1px solid #c4c4c4;
-        padding: 0 3%;
-        height: 15%;
-        width: 64%;
-      }
-
-       #outputLast {
-        position: absolute;
-        right: 23%;
-        top: 78%;
-        border: 1px solid #c4c4c4;
-        padding: 0 3%;
-        height: 15%;
-        width: 64%;
-      }
-
-      #lblLast {
-        position: absolute;
-        top: 68%;
-        right: 50%;
-      }
-
-      #copyLastEmail {
-        position: relative;
-        right: 135px;
-        top: 90px;
-        margin-bottom: 15px;
-      }
-
-      #container {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      #container input {
-        margin: 0 8px;
-      }
-    </style>
-
-    <!--
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
@@ -89,18 +19,28 @@
   <body>
     <h1>Generate your email</h1>
     <div id="container">
-      <label for="prefix">Prefix</label>
-      <input id="prefix" type="text" placeholder="Beggining of email" name="prefix"><br>
-      <label for="sufix">Sufix</label>
-      <input id="sufix" type="text" placeholder="Will go before @" name="sufix"><br>
-      <label for="domain">Domain</label>
-      <input id="domain" type="text" placeholder="Choose your domain" name="sufix"><br>
-      <input id="output" type="text" placeholder="New Email will be here" name="output"><br>
-      <button id="copy">Copy</button>
-      <button id="gen">Gen Email</button>
-      <label for="outputLast" id="lblLast">Last email</label>
-      <input id="outputLast" placeholder="Previouse email" name="outputLast"><br>
-      <button id="copyLastEmail">Copy Last Email</button>
+      <div class="inputCont" id="prefixCont">
+        <label class="lbl" id="lblPrefix" for="prefix">Prefix</label>
+        <input id="prefix" type="text" placeholder="Beggining of email" name="prefix"><br>
+      </div>
+      <div class="inputCont" id="sufixCont">
+        <label class="lbl" for="sufix">Sufix</label>
+        <input id="sufix" type="text" placeholder="Will go before @" name="sufix"><br>
+      </div>
+      <div class="inputCont" id="domainCont">
+        <label class="lbl" for="domain">Domain</label>
+        <input id="domain" type="text" placeholder="Choose your domain" name="sufix"><br>
+      </div>
+      <div class="emailCont" id="emailCont">
+        <input id="output" type="text" placeholder="New Email will be here" name="output"><br>
+        <button id="copy">Copy</button>
+        <button id="gen">Gen Email</button>
+      </div>
+      <div class="emailCont" id="lastEmailCont">
+        <label class="lbl" for="outputLast" id="lblLast">Last email</label>
+        <input id="outputLast" placeholder="Previouse email" name="outputLast"><br>
+        <button id="copyLastEmail">Copy Last Email</button>
+      </div>
     </div>
   </body>
 </html>
