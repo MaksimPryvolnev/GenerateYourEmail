@@ -53,10 +53,7 @@ window.onload = function () {
     document.addEventListener('keydown', (e) => {
         if(e.ctrlKey && e.keyCode == 67) {
             changeEmail(prefix.value, sufix.value, domain.value, output);
-
-        if(prefix.value && sufix.value && domain.value){
             saveChanges(prefix.value, sufix.value, domain.value, output.value);
-        }
             copyEmail(output);
             getChanges();
         }
