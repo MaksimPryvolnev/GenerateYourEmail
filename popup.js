@@ -6,10 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
     var outputLast = document.getElementById('outputLast');
     var copyLastEmail = document.getElementById('copyLastEmail');
     var copy = document.getElementById('copy');
+    var hotKey = document.getElementById('hotKey');
+
     generateEmail = document.getElementById('gen');
     // var container = document.getElementById('container');
     getChanges();
 });
+
+var hotKeyArr = [
+"ctrl",
+"alt",
+"shift"
+]
+
+var hotKeyCompArr = [
+"Control",
+"Alt",
+"Shift"
+]
+
 
 function changeEmail(prefix, sufix, domain, output) {
     var d = new Date();
@@ -45,19 +60,42 @@ function saveChanges(prefix, sufix, domain, output){
 }
 
 window.onload = function () {
+    var firstKey = "";
+    var secondKey = "";
+    var keyPressed = {};
+    hotKey.addEventListener('input', () => {
+//        console.log(firstKey);
+        for(var i = 0; i < hotKeyArr.length; i++) {
+            if(hotKey.value.indexOf(hotKeyArr[i]) > -1) {
+                firstKey = hotKeyCompArr[i];
+                console.log(firstKey);
+                secondKey = hotKey.value.split(hotKeyArr[i] + " + ")[1];
+                console.log(secondKey);
+            }
+        }
+    });
+
+
     copy.addEventListener('click', () => {
         copyEmail(output);
     });
 
 
     document.addEventListener('keydown', (e) => {
-        if(e.ctrlKey && e.keyCode == 67) {
+        keyPressed[e.key] = true;
+        if(keyPressed[firstKey] && keyPressed[secondKey]){
             changeEmail(prefix.value, sufix.value, domain.value, output);
             saveChanges(prefix.value, sufix.value, domain.value, output.value);
             copyEmail(output);
             getChanges();
         }
-    });
+    }, false);
+    document.addEventListener('keyup', (e) => {
+       keyPressed[e.key] = false;
+    }, false);
+
+
+
     copyLastEmail.addEventListener('click', () => {
         copyEmail(outputLast);
     });
@@ -70,3 +108,4 @@ window.onload = function () {
 
 
 }
+

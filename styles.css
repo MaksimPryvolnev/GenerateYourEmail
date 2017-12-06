@@ -7,7 +7,7 @@
       }
 
       #container {
-        margin-bottom: 62px;
+        margin: 25px 0;
       }
 
       h1 {
@@ -17,22 +17,27 @@
       .lbl {
         border: 1px solid #ff3000;
         border-radius: 8px 0px 0px 8px;
-        padding: 7px 10px;
+        padding: 7px 10px 7px 10px;
         background-color: bisque;
         cursor: pointer;
       }
 
-      input {
-        text-align: center;
-        margin: 0px 0px 0px -4px;
-        border: 1px solid rgb(150, 201, 129);
-        border-left: 0;
-        height: 28px;
-        border-radius: 0px 8px 8px 0px;
+      #hotKeyCont {
+        float: right;
+        margin: 20px 17px 0px 0px;
       }
 
-      #domain {
-        margin: 0px 0px 0px -3px;
+      #lblHotKey {
+        padding: 7px 10px 6px 10px;
+      }
+
+      input {
+        text-align: center;
+        margin: -6px 0px 0px -4px;
+        border: 1px solid rgb(150, 201, 129);
+        border-left: 0;
+        height: 33px;
+        border-radius: 0px 8px 8px 0px;
       }
 
       #lblLast {
@@ -40,20 +45,17 @@
         position: absolute;
       }
 
-      #copyLastEmail {
-        margin: 0;
-        top: 65%;
-        right: 3%;
-        padding: 0 72px;
-      }
-
       .inputCont {
         display: inline-block;
         padding: 0 17px;
       }
 
+      #emailCont {
+        margin-top: 10%;
+      }
+
       .emailCont input {
-        width: 402px;
+        width: 385px;
         border: 1px solid rgb(150, 201, 129);
         margin: 0 0 0 15px;
         border-radius: 8px;
@@ -63,12 +65,19 @@
       .emailCont button {
         text-align: right;
         position: absolute;
-        top: 40%;
+        top: 56%;
         right: 17%;
         height: 30px;
         border: 2px solid rgb(114, 190, 255);
         border-radius: 8px;
         background-color: rgb(184, 222, 255);
+      }
+
+      #copyLastEmail {
+        margin: 0;
+        top: 80%;
+        right: 3%;
+        padding: 0 72px;
       }
 
       #copy {
@@ -89,10 +98,12 @@
 
       #output {
         width: 473px;
+        height: 28px;
       }
 
       #outputLast {
         border-radius: 0 8px 8px 0;
         border-left: 0;
-        margin: 0 0 0 88px;
+        margin: 0 0 0 105px;
+        height: 28px;
       }

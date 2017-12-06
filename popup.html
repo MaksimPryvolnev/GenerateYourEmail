@@ -7,6 +7,7 @@
 <html>
   <head>
     <title>Generate your email.</title>
+    <link rel="stylesheet" type="text/css" href="reset.css" >
     <link rel="stylesheet" type="text/css" href="styles.css" >
      <!--
       - JavaScript and HTML must be in separate files: see our Content Security
@@ -14,7 +15,6 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
     -->
-    <script src="popup.js"></script>
   </head>
   <body>
     <h1>Generate your email</h1>
@@ -31,6 +31,10 @@
         <label class="lbl" for="domain">Domain</label>
         <input id="domain" type="text" placeholder="Choose your domain" name="sufix"><br>
       </div>
+      <div id="hotKeyCont">
+        <label class="lbl" for="hotKey" id="lblHotKey">Hot key</label>
+        <input id="hotKey" placeholder="Enter Hot Key for copying" name="hotKey"><br>
+      </div>
       <div class="emailCont" id="emailCont">
         <input id="output" type="text" placeholder="New Email will be here" name="output"><br>
         <button id="copy">Copy</button>
@@ -43,4 +47,5 @@
       </div>
     </div>
   </body>
+  <script src="popup.js"></script>
 </html>
