@@ -67,9 +67,7 @@ window.onload = function () {
     generateEmail.addEventListener('click', () => {
         changeEmail(prefix.value, sufix.value, domain.value, output);
         //      copyEmail(output);
-        if(prefix.value && sufix.value && domain.value){
-             saveChanges(prefix.value, sufix.value, domain.value, output.value);
-        }
+        saveChanges(prefix.value, sufix.value, domain.value, output.value);
     });
 
 
