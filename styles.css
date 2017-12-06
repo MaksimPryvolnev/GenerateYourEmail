@@ -25,7 +25,7 @@
       input {
         text-align: center;
         margin: 0px 0px 0px -4px;
-        border: 1px solid #ff3000;
+        border: 1px solid rgb(150, 201, 129);
         border-left: 0;
         height: 28px;
         border-radius: 0px 8px 8px 0px;
@@ -49,11 +49,12 @@
 
       .inputCont {
         display: inline-block;
+        padding: 0 17px;
       }
 
       .emailCont input {
         width: 402px;
-        border: 1px solid #ff3000;
+        border: 1px solid rgb(150, 201, 129);
         margin: 0 0 0 15px;
         border-radius: 8px;
         text-align: center;
@@ -65,9 +66,9 @@
         top: 40%;
         right: 17%;
         height: 30px;
-        border: 2px solid rgb(150, 201, 129);
+        border: 2px solid rgb(114, 190, 255);
         border-radius: 8px;
-        background-color: #dff0d8;
+        background-color: rgb(184, 222, 255);
       }
 
       #copy {
