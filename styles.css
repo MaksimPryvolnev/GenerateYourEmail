@@ -24,7 +24,6 @@
 
       input {
         margin: 0px 0px 0px -4px;
-        padding: 2px 0px 0px 25px;
         border: 1px solid #ff3000;
         border-left: 0;
         height: 28px;
@@ -32,7 +31,7 @@
       }
 
       #domain {
-        margin: 0px 0px 0px -4px;
+        margin: 0px 0px 0px -3px;
       }
 
       #lblLast {

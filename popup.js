@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     generateEmail = document.getElementById('gen');
     // var container = document.getElementById('container');
     getChanges();
-    myFunction();
 });
 
 function changeEmail(prefix, sufix, domain, output) {
@@ -72,6 +71,7 @@ window.onload = function () {
              saveChanges(prefix.value, sufix.value, domain.value, output.value);
         }
     });
+
+
+
 }
-
-
