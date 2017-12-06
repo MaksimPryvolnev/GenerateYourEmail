@@ -23,6 +23,7 @@
       }
 
       input {
+        text-align: center;
         margin: 0px 0px 0px -4px;
         border: 1px solid #ff3000;
         border-left: 0;
