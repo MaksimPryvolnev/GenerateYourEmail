@@ -46,7 +46,6 @@ var generateEmail = document.getElementById('gen');
 // var container = document.getElementById('container');
 getChanges();
 
-
 var firstKey = "";
 var secondKey = "";
 document.addEventListener('keydown', () => {
@@ -56,17 +55,15 @@ document.addEventListener('keydown', () => {
     }
 });
 
-
 copy.addEventListener('click', () => {
     copyEmail(output);
 });
-
 
 var keyPressed = {};
 document.addEventListener('keydown', (e) => {
     keyPressed[e.key] = true;
     if(keyPressed[firstKey] && keyPressed[secondKey]) {
-        changeEmail(prefix.value, sufix.value, domain.value, output);
+        changeEmail(prefix.value, sufix.value, domain.value, output.value, hotKey.value);
         saveChanges(prefix.value, sufix.value, domain.value, output.value, hotKey.value);
         copyEmail(output);
         getChanges();
@@ -76,15 +73,13 @@ document.addEventListener('keyup', (e) => {
    keyPressed[e.key] = false;
 }, false);
 
-
 copyLastEmail.addEventListener('click', () => {
     copyEmail(outputLast);
 });
 
-
 generateEmail.addEventListener('click', () => {
-    changeEmail(prefix.value, sufix.value, domain.value, output);
+    changeEmail(prefix.value, sufix.value, domain.value, output.value, hotKey.value);
     //      copyEmail(output);
-    saveChanges(prefix.value, sufix.value, domain.value, output.value);
+    saveChanges(prefix.value, sufix.value, domain.value, output.value, hotKey.value);
 });
 
