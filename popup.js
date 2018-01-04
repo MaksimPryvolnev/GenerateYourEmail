@@ -63,7 +63,7 @@ var keyPressed = {};
 document.addEventListener('keydown', (e) => {
     keyPressed[e.key] = true;
     if(keyPressed[firstKey] && keyPressed[secondKey]) {
-        changeEmail(prefix.value, sufix.value, domain.value, output.value, hotKey.value);
+        changeEmail(prefix.value, sufix.value, domain.value, output);
         saveChanges(prefix.value, sufix.value, domain.value, output.value, hotKey.value);
         copyEmail(output);
         getChanges();
@@ -78,7 +78,7 @@ copyLastEmail.addEventListener('click', () => {
 });
 
 generateEmail.addEventListener('click', () => {
-    changeEmail(prefix.value, sufix.value, domain.value, output.value, hotKey.value);
+    changeEmail(prefix.value, sufix.value, domain.value, output);
     //      copyEmail(output);
     saveChanges(prefix.value, sufix.value, domain.value, output.value, hotKey.value);
 });
