@@ -16,16 +16,16 @@ myForm = {
 
 	/*save input data to storage*/
 	saveToStorage (input) {
-	    console.log(input);
+//	    console.log(input);
 	    chrome.storage.sync.get('formData', function(obj){
             var save = {
                 'formData': {
-                    checkEvent () {
+                    checkSentInput () {
                         if(input.srcElement !== undefined){
                             this[input.srcElement.name] = input.srcElement.value;
                             return input.name;
                         } else {
-                            console.log(this.input);
+//                            console.log(this.input);
                             this[input.name] = input.value;
                             return input.name;
                         }
@@ -33,14 +33,14 @@ myForm = {
 
                     getDataFromStorage () {
                         for(key in obj.formData){
-                            if(key !== checkCurrentEvent && key !== "getDataFromStorage" && key !== "checkEvent"){
+                            if(key !== checkCurrentInput && key !== "getDataFromStorage" && key !== "checkEvent"){
                                 this[key] = obj.formData[key];
                             }
                         }
                     }
                 }
             };
-            var checkCurrentEvent = save.formData.checkEvent();
+            var checkCurrentInput = save.formData.checkSentInput();
             save.formData.getDataFromStorage();
             chrome.storage.sync.set(save);
             console.log(save)
