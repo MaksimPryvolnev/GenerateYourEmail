@@ -5,7 +5,7 @@ myForm = {
     },
 
 	changeEmail (prefix, sufix, domain, output) {
-	    var d = new Date();
+	    let d = new Date();
 	    output.value = prefix + d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getHours() + '.' + d.getMinutes() + '.' + d.getSeconds() + '.' + Math.round(d.getMilliseconds()/1000*(10 - 1) + 1) + sufix + '@' + domain;
 	},
 
@@ -18,7 +18,7 @@ myForm = {
 	saveToStorage (input) {
 //	    console.log(input);
 	    chrome.storage.sync.get('formData', function(obj){
-            var save = {
+            let save = {
                 'formData': {
                     checkSentInput () {
                         if(input.srcElement !== undefined){
@@ -40,7 +40,7 @@ myForm = {
                     }
                 }
             };
-            var checkCurrentInput = save.formData.checkSentInput();
+            let checkCurrentInput = save.formData.checkSentInput();
             save.formData.getDataFromStorage();
             chrome.storage.sync.set(save);
             console.log(save)
@@ -50,9 +50,9 @@ myForm = {
 	/*get data from storage and fill input fields*/
 	getFromStorage () {
 	    chrome.storage.sync.get('formData', function(obj){
-	        console.log(obj);
+//	        console.log(obj);
             for(key in obj.formData){
-                console.log(key);
+//                console.log(key);
                 if(key !== "getDataFromStorage" && key !== "checkSentInput" && key !== "output")document.getElementById(key).value = obj.formData[key];
                 if(key === "output")document.getElementById('outputLast').value = obj.formData[key];
             }
