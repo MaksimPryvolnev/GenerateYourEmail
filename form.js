@@ -23,7 +23,7 @@ myForm = {
                     checkSentInput () {
                         if(input.srcElement !== undefined){
                             this[input.srcElement.name] = input.srcElement.value;
-                            return input.name;
+                            return input.srcElement.name;
                         } else {
 //                            console.log(this.input);
                             this[input.name] = input.value;
@@ -33,7 +33,7 @@ myForm = {
 
                     getDataFromStorage () {
                         for(key in obj.formData){
-                            if(key !== checkSentInput && key !== "getDataFromStorage" && key !== "checkSentInput"){
+                            if(key !== checkCurrentInput && key !== "getDataFromStorage" && key !== "checkSentInput"){
                                 this[key] = obj.formData[key];
                             }
                         }
