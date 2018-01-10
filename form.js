@@ -33,7 +33,7 @@ myForm = {
 
                     getDataFromStorage () {
                         for(key in obj.formData){
-                            if(key !== checkCurrentInput && key !== "getDataFromStorage" && key !== "checkEvent"){
+                            if(key !== checkSentInput && key !== "getDataFromStorage" && key !== "checkSentInput"){
                                 this[key] = obj.formData[key];
                             }
                         }
@@ -52,8 +52,8 @@ myForm = {
 	    chrome.storage.sync.get('formData', function(obj){
 	        console.log(obj);
             for(key in obj.formData){
-//                console.log(key);
-                if(key !== "getDataFromStorage" && key !== "checkEvent" && key !== "output")document.getElementById(key).value = obj.formData[key];
+                console.log(key);
+                if(key !== "getDataFromStorage" && key !== "checkSentInput" && key !== "output")document.getElementById(key).value = obj.formData[key];
                 if(key === "output")document.getElementById('outputLast').value = obj.formData[key];
             }
 	    });
