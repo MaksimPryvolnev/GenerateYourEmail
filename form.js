@@ -1,23 +1,22 @@
 myForm = {
     init () {
         window.addEventListener('input', this.saveToStorage.bind(this));
-        document.addEventListener("DOMContentLoaded", this.getFromStorage());
+        document.addEventListener("DOMContentLoaded", this.getFromStorage);
     },
 
-	changeEmail (prefix, sufix, domain, output) {
-	    let d = new Date();
-	    output.value = prefix + d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getHours() + '.' + d.getMinutes() + '.' + d.getSeconds() + '.' + Math.round(d.getMilliseconds()/1000*(10 - 1) + 1) + sufix + '@' + domain;
-	},
+    changeEmail (prefix, sufix, domain, output) {
+        let d = new Date();
+        output.value = prefix + d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getHours() + '.' + d.getMinutes() + '.' + d.getSeconds() + '.' + Math.round(d.getMilliseconds()/1000*(10 - 1) + 1) + sufix + '@' + domain;
+    },
 
-	copyInput (input) {
-	    input.select();
-	    document.execCommand("Copy");
-	},
+    copyInput (input) {
+        input.select();
+        document.execCommand("Copy");
+    },
 
-	/*save input data to storage*/
-	saveToStorage (input) {
-//	    console.log(input);
-	    chrome.storage.sync.get('formData', function(obj){
+    /*save input data to storage*/
+    saveToStorage (input) {
+        chrome.storage.sync.get('formData', function(obj){
             let save = {
                 'formData': {
                     checkSentInput () {
@@ -25,7 +24,6 @@ myForm = {
                             this[input.srcElement.name] = input.srcElement.value;
                             return input.srcElement.name;
                         } else {
-//                            console.log(this.input);
                             this[input.name] = input.value;
                             return input.name;
                         }
@@ -45,19 +43,17 @@ myForm = {
             chrome.storage.sync.set(save);
             console.log(save)
         });
-	},
+    },
 
-	/*get data from storage and fill input fields*/
-	getFromStorage () {
-	    chrome.storage.sync.get('formData', function(obj){
-//	        console.log(obj);
+    /*get data from storage and fill input fields*/
+    getFromStorage () {
+        chrome.storage.sync.get('formData', function(obj){
             for(key in obj.formData){
-//                console.log(key);
                 if(key !== "getDataFromStorage" && key !== "checkSentInput" && key !== "output")document.getElementById(key).value = obj.formData[key];
                 if(key === "output")document.getElementById('outputLast').value = obj.formData[key];
             }
-	    });
-	}
+        });
+    }
 };
 
 myForm.init();
