@@ -53,5 +53,6 @@ generateEmail.addEventListener('click', () => {
 if(!myNumber.value)myNumber.value = 7;
 generatePhoneNum.addEventListener('click', () => {
     myForm.generatePhone(myNumber.value, outputPhone);
+    myForm.copyInput(outputPhone);
     myForm.saveToStorage(outputPhone);
 });

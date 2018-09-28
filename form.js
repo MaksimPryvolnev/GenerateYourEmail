@@ -10,20 +10,15 @@ myForm = {
     },
 
     generatePhone (num, outputPhone) {
-        let currentDate = new Date();
-        let unixTime = Date.parse(new Date()).toString();
-        let x = 0
-        if (currentDate.getMilliseconds() > 99){
-            x = '0.' + currentDate.getMilliseconds();
-            x = Math.round(x * 100);
-        } else if (currentDate.getMilliseconds() < 10) {
-            x = '0' + currentDate.getMilliseconds();
-        } else {
-            x = currentDate.getMilliseconds();
+        genNumeric = num => {
+            var charArr = "1234567890";
+            var randomString = "";
+            for (var i = 0; i < num; i++) {
+                randomString = randomString + charArr.charAt(Math.floor((charArr.length-1) * Math.random()));
+            }
+            return randomString;
         }
-        let unixTimeWithMiliseconds = unixTime.slice(0, 11) + x;
-        let extractNum = num - unixTimeWithMiliseconds.length;
-        outputPhone.value = unixTimeWithMiliseconds.slice(-extractNum);
+        outputPhone.value = genNumeric(num);
     },
 
     copyInput (input) {
