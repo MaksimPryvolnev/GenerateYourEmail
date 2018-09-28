@@ -44,28 +44,42 @@
     
 
     button {
-        width: 150px;
+        width: 130px;
         border: 2px solid rgb(114, 190, 255);
         background-color: rgb(184, 222, 255);
         border-radius: 8px;
     }
 
     #output {
-        border-radius: 8px; 
+        border-radius: 8px;
+        width: 492px;
     }
 
     #copy, #outputPhone {
         border-radius: 0 8px 8px 0;
     }
 
+    #outputPhone {
+        width: 428px;
+    }
+
     #gen, #number {
         border-radius: 8px 0 0 8px;
+    }
+
+    #number {
+        width: 52px;
     }
 
     .inputCont, .emailCont {
         display: flex;
     }
+    
+    #gen {
+        margin-left: 8px;
+    }
 
-    #copyLastEmail, #gen, #genPhone {
-        margin-left: 20px;
+    #copyLastEmail, #genPhone {
+        margin-left: 8px;
+        width: 260px;
     }
