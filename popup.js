@@ -7,6 +7,9 @@ var copyLastEmail = document.getElementById('copyLastEmail');
 var copy = document.getElementById('copy');
 var hotKey = document.getElementById('hotKey');
 var generateEmail = document.getElementById('gen');
+var generatePhoneNum = document.getElementById('genPhone');
+var outputPhone = document.getElementById('outputPhone');
+var myNumber = document.getElementById('number');
 var firstKey = "";
 var secondKey = "";
 
