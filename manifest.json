@@ -3,7 +3,7 @@
 
   "name": "Generate your email",
   "description": "This extension allows the user to generate email. Made by Maksim Pryvolnev.",
-  "version": "1.8",
+  "version": "1.10",
   "author": "Maksim Pryvolnev",
 
   "browser_action": {

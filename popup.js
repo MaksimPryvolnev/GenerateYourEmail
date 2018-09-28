@@ -20,7 +20,7 @@ document.addEventListener('keydown', () => {
     }
 });
 
-copy.addEventListener('click', myForm.copyInput(output));
+copy.addEventListener('click', () => myForm.copyInput(output));
 
 var keyPressed = {};
 document.addEventListener('keydown', (e) => {
@@ -36,7 +36,7 @@ document.addEventListener('keyup', (e) => {
    keyPressed[e.key] = false;
 });
 
-copyLastEmail.addEventListener('click', myForm.copyInput(outputLast));
+copyLastEmail.addEventListener('click', () => myForm.copyInput(outputLast));
 
 generateEmail.addEventListener('click', () => {
     myForm.changeEmail(prefix.value, sufix.value, domain.value, output);
