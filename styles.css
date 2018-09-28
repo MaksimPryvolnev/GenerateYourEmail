@@ -1,107 +1,71 @@
-      body {
-        width: 780px;
-        margin: 10px;
-        height: 150px;
+    body {
+        width: 800px;
+        align: auto;
+        margin: 1%;
         white-space: nowrap;
         text-align: center;
-      }
+    }
 
-      #container {
-        margin: 25px 0;
-      }
+    .col {
+        display: flex;
+        padding: 1%;
+    }
 
-      h1 {
-        font-size: 25px;
-      }
-
-      .lbl {
+    .lbl {
+        display: block;
+        line-height: 250%;
+        font-size: .9em;
+        width: 55px;
+        height: auto;
         border: 1px solid #ff3000;
-        border-radius: 8px 0px 0px 8px;
-        padding: 7px 10px 7px 10px;
+        border-radius: 8px 0 0 8px;
         background-color: bisque;
         cursor: pointer;
-      }
+        margin-left: 0;
+    }
 
-      #hotKeyCont {
-        float: right;
-        margin: 20px 17px 0px 0px;
-      }
-
-     
-
-      input {
+    input {
+        width: 192px;
+        height: 25px;
         text-align: center;
-        margin: -6px 0px 0px -4px;
-        border: 1px solid rgb(150, 201, 129);
-        border-left: 0;
-        height: 33px;
+        border: 2px solid rgb(150, 201, 129);
         border-radius: 0px 8px 8px 0px;
-      }
+        margin-left: 0;
+        margin-right: 10px;
+    }
 
-      #lblLast {
-        left: 3%;
-        position: absolute;
-      }
+    .emailCont input {
+        width: 275px;
+    }
 
-      .inputCont {
-        display: inline-block;
-		padding: 0 1.113%;
-      }
+    #outputLast, #output {
+        width: 435px;
+    }
+    
 
-      #emailCont {
-        margin-top: 10%;
-      }
-
-      .emailCont input {
-        width: 385px;
-        border: 1px solid rgb(150, 201, 129);
-        margin: 0 0 0 15px;
-        border-radius: 8px;
-        text-align: center;
-      }
-
-      .emailCont button {
-        text-align: right;
-        position: absolute;
-        top: 56%;
-        right: 17%;
-        height: 30px;
+    button {
+        width: 150px;
         border: 2px solid rgb(114, 190, 255);
-        border-radius: 8px;
         background-color: rgb(184, 222, 255);
-      }
+        border-radius: 8px;
+    }
 
-      #copyLastEmail {
-        margin: 0;
-        top: 80%;
-        right: 3%;
-        padding: 0 72px;
-      }
+    #output {
+        border-radius: 8px; 
+    }
 
-      #copy {
-        right: 3%;
+    #copy, #outputPhone {
         border-radius: 0 8px 8px 0;
-        padding: 0 40px;
-      }
+    }
 
-      #gen {
+    #gen, #number {
         border-radius: 8px 0 0 8px;
-        padding: 0 34px;
-      }
+    }
 
-      .emailCont {
-        margin-top: 35px;
-        text-align: initial;
-      }
+    .inputCont, .emailCont {
+        display: flex;
+    }
 
-      #output {
-        width: 473px;
-        height: 28px;
-      }
-
-      #outputLast {
-        border-radius: 0 8px 8px 0;
-        border-left: 0;
-        margin: 0 0 0 105px;
-        height: 28px;
-      }
+    #copyLastEmail, #gen, #genPhone {
+        margin-left: 20px;
+    }

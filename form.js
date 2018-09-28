@@ -9,6 +9,23 @@ myForm = {
         output.value = prefix + d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getHours() + '.' + d.getMinutes() + '.' + d.getSeconds() + '.' + Math.round(d.getMilliseconds()/1000*(10 - 1) + 1) + sufix + '@' + domain;
     },
 
+    generatePhone (num, outputPhone) {
+        let currentDate = new Date();
+        let unixTime = Date.parse(new Date()).toString();
+        let x = 0
+        if (currentDate.getMilliseconds() > 99){
+            x = '0.' + currentDate.getMilliseconds();
+            x = Math.round(x * 100);
+        } else if (currentDate.getMilliseconds() < 10) {
+            x = '0' + currentDate.getMilliseconds();
+        } else {
+            x = currentDate.getMilliseconds();
+        }
+        let unixTimeWithMiliseconds = unixTime.slice(0, 11) + x;
+        let extractNum = num - unixTimeWithMiliseconds.length;
+        outputPhone.value = unixTimeWithMiliseconds.slice(-extractNum);
+    },
+
     copyInput (input) {
         input.select();
         document.execCommand("Copy");
@@ -49,8 +66,8 @@ myForm = {
     getFromStorage () {
         chrome.storage.sync.get('formData', function(obj){
             for(key in obj.formData){
-                if(key !== "getDataFromStorage" && key !== "checkSentInput" && key !== "output")document.getElementById(key).value = obj.formData[key];
-                if(key === "output")document.getElementById('outputLast').value = obj.formData[key];
+                if(key && key !== "getDataFromStorage" && key !== "checkSentInput" && key !== "output")document.getElementById(key).value = obj.formData[key];
+                if(key && key === "output")document.getElementById('outputLast').value = obj.formData[key];
             }
         });
     }

@@ -1,52 +1,67 @@
 <!doctype html>
 <!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
+This page is shown when the extension button is clicked, because the
+"browser_action" field in manifest.json contains the "default_popup" key with
+value "popup.html".
+-->
 <html>
-  <head>
-    <title>Generate your email.</title>
-    <link rel="stylesheet" type="text/css" href="reset.css" >
-    <link rel="stylesheet" type="text/css" href="styles.css" >
-     <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-    -->
-  </head>
-  <body>
-    <h1 id="title">Generate your email</h1>
+<head>
+<title>Generate your email.</title>
+<link rel="stylesheet" type="text/css" href="reset.css" >
+<link rel="stylesheet" type="text/css" href="styles.css" >
+    <!--
+    - JavaScript and HTML must be in separate files: see our Content Security
+    - Policy documentation[1] for details and explanation.
+    -
+    - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+-->
+</head>
+<body>
+<h1 id="title">Generate your email</h1>
     <div id="container">
-      <div class="inputCont" id="prefixCont">
-        <label class="lbl" id="lblPrefix" for="prefix">Prefix</label>
-        <input id="prefix" type="text" placeholder="Beggining of email" name="prefix"><br>
-      </div>
-      <div class="inputCont" id="sufixCont">
-        <label class="lbl" for="sufix">Sufix</label>
-        <input id="sufix" type="text" placeholder="Will go before @" name="sufix"><br>
-      </div>
-      <div class="inputCont" id="domainCont">
-        <label class="lbl" for="domain">Domain</label>
-        <input id="domain" type="text" placeholder="Choose your domain" name="domain"><br>
-      </div>
-      <div id="hotKeyCont">
-        <label class="lbl" for="hotKey" id="lblHotKey">Hot key</label>
-        <input id="hotKey" placeholder="Enter Hot Key for copying" name="hotKey"><br>
-      </div>
-      <div class="emailCont" id="emailCont">
-        <input id="output" type="text" placeholder="New Email will be here" name="output"><br>
-        <button id="copy">Copy</button>
-        <button id="gen">Gen Email</button>
-      </div>
-      <div class="emailCont" id="lastEmailCont">
-        <label class="lbl" for="outputLast" id="lblLast">Last email</label>
-        <input id="outputLast" placeholder="Previouse email" name="outputLast"><br>
-        <button id="copyLastEmail">Copy Last Email</button>
-      </div>
+        <div class="col">
+            <div class="inputCont" id="prefixCont">
+                <label class="lbl" id="lblPrefix" for="prefix">Prefix</label>
+                <input id="prefix" type="text" placeholder="Beggining of email" name="prefix"><br>
+            </div>
+                <div class="inputCont" id="sufixCont">
+                <label class="lbl" for="sufix">Sufix</label>
+                <input id="sufix" type="text" placeholder="Will go before @" name="sufix"><br>
+            </div>
+                <div class="inputCont" id="domainCont">
+                <label class="lbl" for="domain">Domain</label>
+                <input id="domain" type="text" placeholder="Choose your domain" name="domain"><br>
+            </div>
+        </div>
+        <div class="col">
+            <div class = "inputCont" id="hotKeyCont">
+                <label class="lbl" for="hotKey" id="lblHotKey">Hot key</label>
+                <input id="hotKey" placeholder="Enter Hot Key for copying" name="hotKey"><br>
+            </div>
+        </div>
+        <div class="col">
+            <div class="emailCont" id="emailCont">
+                <input id="output" type="text" placeholder="New Email will be here" name="output" readonly><br>
+                <button id="gen">Gen Email</button>
+                <button id="copy">Copy</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="emailCont" id="lastEmailCont">
+                <label class="lbl" for="outputLast" id="lblLast" readonly>Last email</label>
+                <input id="outputLast" type="text" placeholder="Previouse email" name="outputLast" readonly><br>
+                <button id="copyLastEmail">Copy Last Email</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="emailCont" id="phoneCont">
+                <input type="number" name="number" id="number">
+                <input id="outputPhone" placeholder="Phone number" name="outputPhone" readonly><br>
+                <button id="genPhone">Gen Phone</button>
+            </div>
+        </div>
     </div>
-  </body>
-  <script src="form.js"></script>
-  <script src="popup.js"></script>
+</body>
+<script src="form.js"></script>
+<script src="popup.js"></script>
 </html>
